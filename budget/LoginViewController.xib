@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="budget" customModuleProvider="target">
+            <connections>
+                <outlet property="connectionStatusLight" destination="FPm-n4-e9r" id="Pob-i2-BFm"/>
+                <outlet property="connectionStatusText" destination="Kau-2I-bXM" id="AcP-Nc-Wtg"/>
+                <outlet property="email" destination="jMn-Gp-eLv" id="XEy-j1-k20"/>
+                <outlet property="password" destination="Jc8-E9-MD8" id="1c5-Rx-eX5"/>
+                <outlet property="view" destination="sgl-YR-kZK" id="MUc-mz-G2t"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="sgl-YR-kZK">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sebastian.ruiz@me.com" borderStyle="line" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMn-Gp-eLv">
+                    <rect key="frame" x="160" y="131" width="280" height="46"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="2eP-56-BwN"/>
+                        <constraint firstAttribute="height" constant="46" id="4Ap-IB-2jg"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="airport" borderStyle="line" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-E9-MD8">
+                    <rect key="frame" x="160" y="185" width="280" height="46"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="Oxk-Xn-Rmo"/>
+                        <constraint firstAttribute="height" constant="46" id="s6H-U3-If5"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq8-jd-OE1">
+                    <rect key="frame" x="160" y="247" width="280" height="44"/>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="R3W-th-vlH"/>
+                        <constraint firstAttribute="width" constant="280" id="k79-zh-VKY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapLoginButton:" destination="-1" eventType="touchUpInside" id="PaT-ls-i9n"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnM-EZ-21Q">
+                    <rect key="frame" x="160" y="299" width="280" height="44"/>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="unF-1D-H1d"/>
+                        <constraint firstAttribute="height" constant="44" id="vdX-Dt-Tp0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Say Hello">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapSayHiButton:" destination="-1" eventType="touchUpInside" id="RwB-pv-rkv"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Meteor TodoS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rel-mT-juC">
+                    <rect key="frame" x="160" y="66" width="280" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="Gb7-rw-fgm"/>
+                        <constraint firstAttribute="width" constant="280" id="gTD-YO-AFr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="red_light.png" translatesAutoresizingMaskIntoConstraints="NO" id="FPm-n4-e9r">
+                    <rect key="frame" x="416" y="514" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="cVi-kl-ZXz"/>
+                        <constraint firstAttribute="height" constant="20" id="ikz-gy-nua"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Not Connected to Todo Server" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kau-2I-bXM">
+                    <rect key="frame" x="152" y="515" width="256" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="256" id="9nk-jw-9gB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Jc8-E9-MD8" firstAttribute="top" secondItem="jMn-Gp-eLv" secondAttribute="bottom" constant="8" id="1xA-gq-dAj"/>
+                <constraint firstItem="FPm-n4-e9r" firstAttribute="leading" secondItem="Kau-2I-bXM" secondAttribute="trailing" constant="4" id="7J2-Uq-rtO"/>
+                <constraint firstAttribute="centerX" secondItem="Xq8-jd-OE1" secondAttribute="centerX" id="861-c2-jyS"/>
+                <constraint firstAttribute="bottom" secondItem="FPm-n4-e9r" secondAttribute="bottom" constant="68" id="97k-0L-kxX"/>
+                <constraint firstItem="FPm-n4-e9r" firstAttribute="leading" secondItem="Kau-2I-bXM" secondAttribute="trailing" constant="8" id="9Wz-Zr-3Ab"/>
+                <constraint firstItem="jMn-Gp-eLv" firstAttribute="top" secondItem="rel-mT-juC" secondAttribute="bottom" constant="24" id="CWs-6o-8sg"/>
+                <constraint firstAttribute="bottom" secondItem="Kau-2I-bXM" secondAttribute="bottom" constant="67" id="EjH-4o-E4U"/>
+                <constraint firstItem="Xq8-jd-OE1" firstAttribute="top" secondItem="Jc8-E9-MD8" secondAttribute="bottom" constant="16" id="Jb1-O2-d4X"/>
+                <constraint firstItem="rel-mT-juC" firstAttribute="top" secondItem="sgl-YR-kZK" secondAttribute="top" constant="66" id="M3A-NX-TXx"/>
+                <constraint firstAttribute="centerX" secondItem="Kau-2I-bXM" secondAttribute="centerX" id="O7F-Fc-RVL"/>
+                <constraint firstItem="PnM-EZ-21Q" firstAttribute="top" secondItem="Xq8-jd-OE1" secondAttribute="bottom" constant="8" id="QWn-kz-prz"/>
+                <constraint firstAttribute="centerX" secondItem="PnM-EZ-21Q" secondAttribute="centerX" id="Se0-wJ-U82"/>
+                <constraint firstItem="FPm-n4-e9r" firstAttribute="leading" secondItem="Kau-2I-bXM" secondAttribute="trailing" constant="4" id="U99-kd-w5w"/>
+                <constraint firstItem="FPm-n4-e9r" firstAttribute="leading" secondItem="Kau-2I-bXM" secondAttribute="trailing" constant="8" id="YCx-HE-yUd"/>
+                <constraint firstAttribute="bottom" secondItem="FPm-n4-e9r" secondAttribute="bottom" constant="66" id="Ycm-GD-YGX"/>
+                <constraint firstAttribute="centerX" secondItem="jMn-Gp-eLv" secondAttribute="centerX" id="kU5-hQ-qnl"/>
+                <constraint firstAttribute="centerX" secondItem="Kau-2I-bXM" secondAttribute="centerX" id="mBJ-ME-gMR"/>
+                <constraint firstAttribute="centerX" secondItem="FPm-n4-e9r" secondAttribute="centerX" id="ov1-0e-7uk"/>
+                <constraint firstAttribute="centerX" secondItem="Kau-2I-bXM" secondAttribute="centerX" id="pr5-eA-GA9"/>
+                <constraint firstAttribute="centerX" secondItem="Jc8-E9-MD8" secondAttribute="centerX" id="rni-Hc-67Y"/>
+                <constraint firstAttribute="centerX" secondItem="Kau-2I-bXM" secondAttribute="centerX" constant="20" id="uvZ-vO-vms"/>
+                <constraint firstAttribute="centerX" secondItem="Kau-2I-bXM" secondAttribute="centerX" constant="20" id="vPa-o5-16O"/>
+                <constraint firstAttribute="centerX" secondItem="rel-mT-juC" secondAttribute="centerX" id="z8h-HI-vZZ"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="O7F-Fc-RVL"/>
+                    <exclude reference="mBJ-ME-gMR"/>
+                    <exclude reference="pr5-eA-GA9"/>
+                    <exclude reference="vPa-o5-16O"/>
+                    <exclude reference="7J2-Uq-rtO"/>
+                    <exclude reference="97k-0L-kxX"/>
+                    <exclude reference="U99-kd-w5w"/>
+                    <exclude reference="YCx-HE-yUd"/>
+                    <exclude reference="ov1-0e-7uk"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="436" y="-129"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="red_light.png" width="50" height="50"/>
+    </resources>
+</document>
