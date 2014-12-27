@@ -68,41 +68,29 @@ class OverviewsListViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("OverviewsCell", forIndexPath: indexPath) as OverviewsCell
-        
-//        var cellIdentifier:NSString = "OverviewsCell"
-//        var cell:UITableViewCell
-//        
-//        if var tmpCell: AnyObject = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) {
-//            cell = tmpCell as OverviewsCell
-//        } else {
-//            cell = OverviewsCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellIdentifier) as OverviewsCell
-//        }
-        
-//        let player = players[indexPath.row] as Player
-//        cell.textLabel?.text = player.name
-//        cell.detailTextLabel?.text = player.game
-//        return cell
+    
         cell.frame = CGRectMake(0,0,tableView.frame.size.width, cell.frame.size.height);
         println(tableView.frame.size.width)
         println(indexPath.row)
         var list:NSDictionary = self.lists.objectAtIndex(UInt(indexPath.row)) as NSDictionary
         selectedList = list
-//        cell.textLabel?.text = list["name"] as NSString
+        
+        if list["share_with"] != nil {
+            var names:NSString = ""
+            if let o = list["share_with"]! as? NSArray {
+                var share:NSArray = list["share_with"]! as NSArray
+                names = share.componentsJoinedByString(", ")
+            }
+            if let o = list["share_with"]! as? NSString {
+                names = list["share_with"]! as NSString
+            }
+            cell.cellDetail?.text = names
+        }
+        
         cell.cellTitle?.text = list["name"] as NSString
-        cell.cellDetail?.text = "Some detail"
-        cell.cellDetailRight?.text = "£7.99"
+        cell.cellDetailRight?.text = list["owner"] as NSString
         cell.cellCircleImage?.backgroundColor = UIColor.brownColor()
         cell.cellCircleImage?.layer.cornerRadius = 5
-        
-//        var shareButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-        
-//        shareButton.frame = CGRectMake(255.0, 5.0, 55.0, 34.0)
-//        shareButton.backgroundColor = UIColor.greenColor()
-//        shareButton.setTitle("Share", forState: UIControlState.Normal)
-//        shareButton.addTarget(self, action: "didClickShareButton:forEvent:", forControlEvents: .TouchUpInside)
-        
-//        cell.addSubview(shareButton)
-        
         
         return cell
     }

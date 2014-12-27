@@ -16,17 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navController: UINavigationController!
     let meteorData = MeteorData.sharedInstance;
     
-    // Override point for customization after application launch. creates our singleton
-//    var meteorClient = initialiseMeteor("pre2", "ws://localhost:3000/websocket");
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         
-//        meteorData.
-        
-//        meteorClient.addSubscription("things")
-//        meteorClient.addSubscription("lists")
         
         var loginController:LoginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
-//        loginController.meteor = self.meteorClient
 
         self.navController = UINavigationController(rootViewController:loginController)
         self.navController.navigationBarHidden = true
@@ -36,8 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController = self.navController
         self.window!.makeKeyAndVisible()
         println(self.window?.frame)
-        
-        
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportConnection", name: MeteorClientDidConnectNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportDisconnection", name: MeteorClientDidDisconnectNotification, object: nil)

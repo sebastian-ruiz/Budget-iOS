@@ -10,7 +10,7 @@
         <!--Add Overview-->
         <scene sceneID="hcU-7l-2EM">
             <objects>
-                <viewController id="lYN-VH-afc" sceneMemberID="viewController">
+                <viewController id="lYN-VH-afc" customClass="OverviewsAddController" customModule="budget" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QNV-pG-yPM"/>
                         <viewControllerLayoutGuide type="bottom" id="q5G-Si-NbC"/>
@@ -75,8 +75,18 @@
                                 <segue destination="vOC-CC-ler" kind="custom" customClass="DismissSegue" id="9yE-mv-wH0"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="sxg-kf-OgA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="sxg-kf-OgA">
+                            <connections>
+                                <action selector="barBtnSave:" destination="lYN-VH-afc" id="OAR-Of-ukA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="fieldAdmins" destination="rw9-ZQ-sXL" id="Cza-b4-Pqo"/>
+                        <outlet property="fieldFriends" destination="Ew2-9j-9GZ" id="p1g-Oo-Wgt"/>
+                        <outlet property="fieldInitialBudget" destination="fqT-UE-vGe" id="3r4-dL-86Q"/>
+                        <outlet property="fieldTitle" destination="AF6-45-VZJ" id="V5h-nn-e3w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9sy-Dg-cw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,8 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-//    var meteor:MeteorClient!
     
     override func viewDidLoad() {
         super.viewDidLoad()
