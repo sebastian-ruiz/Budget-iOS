@@ -17,18 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let meteorData = MeteorData.sharedInstance;
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
-        
+        FBLoginView.self
+        FBProfilePictureView.self
         
         var loginController:LoginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
-
         self.navController = UINavigationController(rootViewController:loginController)
         self.navController.navigationBarHidden = true
-
+        
         //This needs to be modified to fix the screen size issue. (Currently a Bug)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window!.rootViewController = self.navController
         self.window!.makeKeyAndVisible()
-        println(self.window?.frame)
+//        println(self.window?.frame)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportConnection", name: MeteorClientDidConnectNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportDisconnection", name: MeteorClientDidDisconnectNotification, object: nil)
@@ -36,8 +36,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: NSString?, annotation: AnyObject) -> Bool{
+        var wasHandled:Bool = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
+        return wasHandled
+    }
+
+    
     func reportConnection() {
         println("================> connected to server!")
+        
+//        self.meteorData.meteorClient.callMethodName("sayHelloTo", parameters:["blah!"], responseCallback: {(response, error) -> Void in
+//            println(error);
+////          var message:NSString! = response["result"] as NSString
+////          UIAlertView(title: "Meteor Todos", message: message, delegate: nil, cancelButtonTitle:"Great").show()
+//        })
     }
     
     func reportDisconnection() {

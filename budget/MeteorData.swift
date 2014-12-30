@@ -22,7 +22,7 @@ class MeteorData {
     }
     
     init() {
-        println("BBB");
+        println("Initialising Meteor Client");
         userId = 0;
         name = "";
         meteorClient = initialiseMeteor("pre2", "ws://localhost:3000/websocket");

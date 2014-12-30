@@ -1,4 +1,8 @@
 PODS:
+  - Bolts (1.1.3)
+  - ChameleonFramework (1.1.1)
+  - Facebook-iOS-SDK (3.21.1):
+    - Bolts (~> 1.0)
   - M13OrderedDictionary (1.0.6)
   - ObjectiveDDP (0.1.9):
     - M13OrderedDictionary
@@ -6,6 +10,8 @@ PODS:
   - SocketRocket (0.3.1-beta2)
 
 DEPENDENCIES:
+  - ChameleonFramework
+  - Facebook-iOS-SDK
   - ObjectiveDDP (from `git@github.com:boundsj/ObjectiveDDP.git`, branch `master`)
 
 EXTERNAL SOURCES:
@@ -19,6 +25,9 @@ CHECKOUT OPTIONS:
     :git: git@github.com:boundsj/ObjectiveDDP.git
 
 SPEC CHECKSUMS:
+  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
+  ChameleonFramework: c60096686e3771f5d78f26cfbfd08955a8a88cbd
+  Facebook-iOS-SDK: 18c26e86ab25c17854a2ee2a8f60562099c6600f
   M13OrderedDictionary: 8f721284b4960aabaf567b7894911a45cb9c71b0
   ObjectiveDDP: d7eb090d8ce678d83ff0645a03ff62e66a948b73
   SocketRocket: 79a68ae186063c65e1fe6f638b1ae2927aa5f304

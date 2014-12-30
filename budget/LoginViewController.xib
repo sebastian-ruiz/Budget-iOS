@@ -9,6 +9,7 @@
                 <outlet property="connectionStatusLight" destination="FPm-n4-e9r" id="Pob-i2-BFm"/>
                 <outlet property="connectionStatusText" destination="Kau-2I-bXM" id="AcP-Nc-Wtg"/>
                 <outlet property="email" destination="jMn-Gp-eLv" id="XEy-j1-k20"/>
+                <outlet property="fbLoginView" destination="2Di-ko-JFY" id="1w3-Zx-Uif"/>
                 <outlet property="password" destination="Jc8-E9-MD8" id="1c5-Rx-eX5"/>
                 <outlet property="view" destination="sgl-YR-kZK" id="MUc-mz-G2t"/>
             </connections>
@@ -29,7 +30,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="airport" borderStyle="line" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-E9-MD8">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="testing" borderStyle="line" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-E9-MD8">
                     <rect key="frame" x="160" y="185" width="280" height="46"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -104,16 +105,22 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Di-ko-JFY" customClass="FBLoginView">
+                    <rect key="frame" x="160" y="351" width="280" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Jc8-E9-MD8" firstAttribute="top" secondItem="jMn-Gp-eLv" secondAttribute="bottom" constant="8" id="1xA-gq-dAj"/>
                 <constraint firstItem="FPm-n4-e9r" firstAttribute="leading" secondItem="Kau-2I-bXM" secondAttribute="trailing" constant="4" id="7J2-Uq-rtO"/>
+                <constraint firstAttribute="trailing" secondItem="2Di-ko-JFY" secondAttribute="trailing" constant="160" id="7MI-Wh-V0f"/>
                 <constraint firstAttribute="centerX" secondItem="Xq8-jd-OE1" secondAttribute="centerX" id="861-c2-jyS"/>
                 <constraint firstAttribute="bottom" secondItem="FPm-n4-e9r" secondAttribute="bottom" constant="68" id="97k-0L-kxX"/>
                 <constraint firstItem="FPm-n4-e9r" firstAttribute="leading" secondItem="Kau-2I-bXM" secondAttribute="trailing" constant="8" id="9Wz-Zr-3Ab"/>
                 <constraint firstItem="jMn-Gp-eLv" firstAttribute="top" secondItem="rel-mT-juC" secondAttribute="bottom" constant="24" id="CWs-6o-8sg"/>
                 <constraint firstAttribute="bottom" secondItem="Kau-2I-bXM" secondAttribute="bottom" constant="67" id="EjH-4o-E4U"/>
+                <constraint firstItem="2Di-ko-JFY" firstAttribute="top" secondItem="PnM-EZ-21Q" secondAttribute="bottom" constant="8" id="IgC-yp-0Nd"/>
                 <constraint firstItem="Xq8-jd-OE1" firstAttribute="top" secondItem="Jc8-E9-MD8" secondAttribute="bottom" constant="16" id="Jb1-O2-d4X"/>
                 <constraint firstItem="rel-mT-juC" firstAttribute="top" secondItem="sgl-YR-kZK" secondAttribute="top" constant="66" id="M3A-NX-TXx"/>
                 <constraint firstAttribute="centerX" secondItem="Kau-2I-bXM" secondAttribute="centerX" id="O7F-Fc-RVL"/>
@@ -122,17 +129,25 @@
                 <constraint firstItem="FPm-n4-e9r" firstAttribute="leading" secondItem="Kau-2I-bXM" secondAttribute="trailing" constant="4" id="U99-kd-w5w"/>
                 <constraint firstItem="FPm-n4-e9r" firstAttribute="leading" secondItem="Kau-2I-bXM" secondAttribute="trailing" constant="8" id="YCx-HE-yUd"/>
                 <constraint firstAttribute="bottom" secondItem="FPm-n4-e9r" secondAttribute="bottom" constant="66" id="Ycm-GD-YGX"/>
+                <constraint firstAttribute="centerX" secondItem="2Di-ko-JFY" secondAttribute="centerX" id="eyb-Hz-0ar"/>
+                <constraint firstItem="2Di-ko-JFY" firstAttribute="leading" secondItem="sgl-YR-kZK" secondAttribute="leading" constant="160" id="jnE-K3-XgL"/>
                 <constraint firstAttribute="centerX" secondItem="jMn-Gp-eLv" secondAttribute="centerX" id="kU5-hQ-qnl"/>
                 <constraint firstAttribute="centerX" secondItem="Kau-2I-bXM" secondAttribute="centerX" id="mBJ-ME-gMR"/>
                 <constraint firstAttribute="centerX" secondItem="FPm-n4-e9r" secondAttribute="centerX" id="ov1-0e-7uk"/>
                 <constraint firstAttribute="centerX" secondItem="Kau-2I-bXM" secondAttribute="centerX" id="pr5-eA-GA9"/>
                 <constraint firstAttribute="centerX" secondItem="Jc8-E9-MD8" secondAttribute="centerX" id="rni-Hc-67Y"/>
+                <constraint firstAttribute="centerX" secondItem="2Di-ko-JFY" secondAttribute="centerX" id="s4i-ri-gXQ"/>
                 <constraint firstAttribute="centerX" secondItem="Kau-2I-bXM" secondAttribute="centerX" constant="20" id="uvZ-vO-vms"/>
                 <constraint firstAttribute="centerX" secondItem="Kau-2I-bXM" secondAttribute="centerX" constant="20" id="vPa-o5-16O"/>
+                <constraint firstItem="2Di-ko-JFY" firstAttribute="top" secondItem="PnM-EZ-21Q" secondAttribute="bottom" constant="8" id="xzk-M9-XnV"/>
                 <constraint firstAttribute="centerX" secondItem="rel-mT-juC" secondAttribute="centerX" id="z8h-HI-vZZ"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="7MI-Wh-V0f"/>
+                    <exclude reference="eyb-Hz-0ar"/>
+                    <exclude reference="jnE-K3-XgL"/>
+                    <exclude reference="xzk-M9-XnV"/>
                     <exclude reference="O7F-Fc-RVL"/>
                     <exclude reference="mBJ-ME-gMR"/>
                     <exclude reference="pr5-eA-GA9"/>

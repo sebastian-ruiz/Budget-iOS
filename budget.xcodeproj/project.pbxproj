@@ -18,7 +18,8 @@
 		9E7AD16C1A4D80E1001F9B0B /* MeteorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AD16B1A4D80E0001F9B0B /* MeteorData.swift */; };
 		9E7AD16E1A4DA10E001F9B0B /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AD16D1A4DA10E001F9B0B /* DismissSegue.swift */; };
 		9E7AD1701A4DA9E5001F9B0B /* OverviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AD16F1A4DA9E5001F9B0B /* OverviewsCell.swift */; };
-		9EA6178D1A4ECB9C009D87C6 /* OverviewsAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA6178C1A4ECB9C009D87C6 /* OverviewsAddController.swift */; };
+		9EA14E491A5175E80001126A /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA14E481A5175E80001126A /* ItemsViewController.swift */; };
+		9EA14E4B1A517FD00001126A /* OverviewsEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA14E4A1A517FD00001126A /* OverviewsEditViewController.swift */; };
 		9ECDA2B31A4C408000007F64 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECDA2B21A4C408000007F64 /* LoginViewController.swift */; };
 		9ECDA2B51A4C583E00007F64 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ECDA2B41A4C583E00007F64 /* LoginViewController.xib */; };
 		9EE9CD2D1A4C5B6700BD6729 /* green_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EE9CD291A4C5B6700BD6729 /* green_light.png */; };
@@ -57,7 +58,8 @@
 		9E7AD16B1A4D80E0001F9B0B /* MeteorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeteorData.swift; sourceTree = "<group>"; };
 		9E7AD16D1A4DA10E001F9B0B /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		9E7AD16F1A4DA9E5001F9B0B /* OverviewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewsCell.swift; sourceTree = "<group>"; };
-		9EA6178C1A4ECB9C009D87C6 /* OverviewsAddController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewsAddController.swift; sourceTree = "<group>"; };
+		9EA14E481A5175E80001126A /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		9EA14E4A1A517FD00001126A /* OverviewsEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewsEditViewController.swift; sourceTree = "<group>"; };
 		9ECDA2B21A4C408000007F64 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9ECDA2B41A4C583E00007F64 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		9EE9CD291A4C5B6700BD6729 /* green_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_light.png; sourceTree = "<group>"; };
@@ -132,19 +134,20 @@
 			children = (
 				9E60A6FF1A4B77FE008725C4 /* Main.storyboard */,
 				9EF62BDC1A4AC38D00CDC7C4 /* ViewController.swift */,
-				9E33D4861A4A15C300722269 /* AppDelegate.swift */,
 				9E33D48D1A4A15C300722269 /* Images.xcassets */,
 				9E33D4841A4A15C300722269 /* Supporting Files */,
 				9E60A6F11A4B697F008725C4 /* budget-Bridging-Header.h */,
 				9E60A6F21A4B6AAF008725C4 /* bridge.m */,
+				9E33D4861A4A15C300722269 /* AppDelegate.swift */,
 				9ECDA2B21A4C408000007F64 /* LoginViewController.swift */,
 				9ECDA2B41A4C583E00007F64 /* LoginViewController.xib */,
 				9EE9CD311A4CBD3800BD6729 /* OverviewsListViewController.swift */,
 				9E7AD16F1A4DA9E5001F9B0B /* OverviewsCell.swift */,
-				9EA6178C1A4ECB9C009D87C6 /* OverviewsAddController.swift */,
 				9EE9CD351A4CC7B200BD6729 /* MainTabBarController.swift */,
 				9E7AD16B1A4D80E0001F9B0B /* MeteorData.swift */,
 				9E7AD16D1A4DA10E001F9B0B /* DismissSegue.swift */,
+				9EA14E4A1A517FD00001126A /* OverviewsEditViewController.swift */,
+				9EA14E481A5175E80001126A /* ItemsViewController.swift */,
 			);
 			path = budget;
 			sourceTree = "<group>";
@@ -323,10 +326,11 @@
 			files = (
 				9ECDA2B31A4C408000007F64 /* LoginViewController.swift in Sources */,
 				9E60A6F31A4B6AAF008725C4 /* bridge.m in Sources */,
-				9EA6178D1A4ECB9C009D87C6 /* OverviewsAddController.swift in Sources */,
 				9E7AD16E1A4DA10E001F9B0B /* DismissSegue.swift in Sources */,
 				9EE9CD361A4CC7B200BD6729 /* MainTabBarController.swift in Sources */,
 				9EE9CD321A4CBD3800BD6729 /* OverviewsListViewController.swift in Sources */,
+				9EA14E491A5175E80001126A /* ItemsViewController.swift in Sources */,
+				9EA14E4B1A517FD00001126A /* OverviewsEditViewController.swift in Sources */,
 				9E7AD16C1A4D80E1001F9B0B /* MeteorData.swift in Sources */,
 				9E33D4871A4A15C300722269 /* AppDelegate.swift in Sources */,
 				9EF62BE51A4AC38D00CDC7C4 /* ViewController.swift in Sources */,

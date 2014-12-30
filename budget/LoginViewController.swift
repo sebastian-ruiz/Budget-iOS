@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, FBLoginViewDelegate {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -18,6 +18,48 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var connectionStatusText: UILabel!
     
     let meteorData = MeteorData.sharedInstance;
+    
+    
+    @IBOutlet weak var fbLoginView: FBLoginView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.fbLoginView.delegate = self
+        self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
+        
+    }
+    
+    // Facebook Delegate Methods
+    func loginViewShowingLoggedInUser(loginView : FBLoginView!) {
+        println("User Logged In")
+    }
+    
+    func loginViewFetchedUserInfo(loginView : FBLoginView!, user: FBGraphUser) {
+        println("User: \(user)")
+        println("User ID: \(user.objectID)")
+        println("User Name: \(user.name)")
+        var userEmail = user.objectForKey("email") as NSString
+        println("User Email: \(userEmail)")
+        
+        var userToken = FBSession.activeSession().accessTokenData.accessToken
+        println("User Access Token: \(userToken)")
+        
+        // TODO: fix bug that requires tiny delay.
+//        let delay = 0.01 * Double(NSEC_PER_SEC)
+//        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+//        dispatch_after(time, dispatch_get_main_queue()) { self.sendUserToken(userEmail, userToken: userToken) }
+        
+    }
+    
+    func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
+        println("User Logged Out")
+    }
+    
+    func loginView(loginView : FBLoginView!, handleError:NSError) {
+        println("Error: \(handleError.localizedDescription)")
+    }
     
     override func viewWillAppear(animated: Bool) {
         var observingOption = NSKeyValueObservingOptions.New
@@ -35,12 +77,13 @@ class LoginViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        
+    func sendUserToken(userEmail:NSString, userToken:NSString) {
+        self.meteorData.meteorClient.callMethodName("setUserAccessToken", parameters:[userEmail, userToken], responseCallback: {(response, error) -> Void in
+            var message:NSString! = response["result"] as NSString
+            UIAlertView(title: "Meteor Todos", message: message, delegate: nil, cancelButtonTitle:"Great").show()
+        })
     }
+    
     
     @IBAction func didTapLoginButton(sender: AnyObject) {
         if (!meteorData.meteorClient.websocketReady) {

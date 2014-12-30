@@ -11,6 +11,7 @@
 #import "ObjectiveDDP.h"
 #import <ObjectiveDDP/MeteorClient.h>
 #import <ObjectiveDDP/BSONIdGenerator.h>
-
+#import <FacebookSDK/FacebookSDK.h>
+#import "ChameleonFramework/Chameleon.h"
 
 #import "bridge.m"

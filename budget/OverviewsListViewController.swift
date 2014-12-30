@@ -12,9 +12,10 @@ import UIKit
 
 class OverviewsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+
     @IBOutlet weak var tableview: UITableView!
     var lists:M13MutableOrderedDictionary!
-    
+    var textField:UITextField?
     let meteorData = MeteorData.sharedInstance;
     
     
@@ -68,10 +69,7 @@ class OverviewsListViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("OverviewsCell", forIndexPath: indexPath) as OverviewsCell
-    
-        cell.frame = CGRectMake(0,0,tableView.frame.size.width, cell.frame.size.height);
-        println(tableView.frame.size.width)
-        println(indexPath.row)
+
         var list:NSDictionary = self.lists.objectAtIndex(UInt(indexPath.row)) as NSDictionary
         selectedList = list
         
@@ -141,16 +139,55 @@ class OverviewsListViewController: UIViewController, UITableViewDataSource, UITa
         var id = list["_id"] as NSString
         self.meteorData.meteorClient.callMethodName("/lists/remove", parameters: [["_id":id]], responseCallback: nil)
     }
-    
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        var list:NSDictionary = self.lists.objectAtIndex(UInt(indexPath.row)) as NSDictionary
-//        var viewController:ViewController = ViewController(nibNameOrNil: "ViewController", bundle: nil, meteor: meteorData.meteorClient, listName: list["name"] as NSString)
-//
-//        viewController.userId = meteorData.meteorClient.userId
-//        self.navigationController?.pushViewController(viewController, animated: true)
+
+    @IBAction func btnAddOverview(sender: AnyObject) {
+        var alert = UIAlertController(title: "Add a New List", message: "Once created, you can invite friends, and setup the budget.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addTextFieldWithConfigurationHandler(configurationTextField)
+        alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Cancel, handler:nil))
+        alert.addAction(UIAlertAction(title: "Create!", style: UIAlertActionStyle.Default, handler:{ (UIAlertAction)in
+            var parameters:NSArray = [["_id": NSUUID().UUIDString,
+                "name":self.textField!.text,
+                "owner":self.meteorData.meteorClient.userId]]
+            self.meteorData.meteorClient.callMethodName("/lists/insert", parameters: parameters, responseCallback: nil)
+        }))
+        self.presentViewController(alert, animated: true, completion: {
+            println("completion block")
+        })
     }
     
+    func configurationTextField(textField: UITextField!)
+    {
+        if let tField = textField {
+        
+            var placeholders: [NSString] = ["Weekly Groceries", "BBQ dinner", "Dining out", "Go karting", "Sushi evening", "Party Organisers"]
+            var random = arc4random_uniform(UInt32(placeholders.count))
+            self.textField = textField!        //Save reference to the UITextField
+            self.textField!.placeholder = placeholders[Int(random)]
+        }
+    }
+
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SavePlayerDetail" {
+//            player = Player(name: nameTextField.text, game:game, rating: 1)
+        }
+        if segue.identifier == "ShowOverview" {
+            let path = self.tableview.indexPathForSelectedRow()!
+            let itemsViewController = segue.destinationViewController as ItemsViewController
+            let selectedIndex = self.tableview.indexPathForCell(sender as UITableViewCell)
+            var list:NSDictionary = self.lists.objectAtIndex(UInt(selectedIndex!.row)) as NSDictionary
+            itemsViewController.listName = list["name"] as NSString
+        }
+    }
     
+//    @IBAction func selectedGame(segue:UIStoryboardSegue) {
+//        let gamePickerViewController = segue.sourceViewController as GamePickerViewController
+//        if let selectedGame = gamePickerViewController.selectedGame {
+//            detailLabel.text = selectedGame
+//            game = selectedGame
+//        }
+//        self.navigationController?.popViewControllerAnimated(true)
+//    }
 
     
     override func didReceiveMemoryWarning() {

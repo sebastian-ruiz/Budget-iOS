@@ -4,6 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ChameleonFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Facebook-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-M13OrderedDictionary.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2FB1735D08EA8720EF0C8FF7</key>
+		<key>195A4F960B1043E927A21EEB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5554BD12DA5BACCB9D3DCF34</key>
+		<key>5343744D03C982CD0F455620</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AAE9B73B047EE88C21ABA975</key>
+		<key>67520CEC596B890C07791FA3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FC9BB0401289B5B9741C38BA</key>
+		<key>9DA106F050D1C1C3F16EDCBE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DADD46F1ED4408DB7485A21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA1BC93225A0175BDFA6407B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB93A39F8EA8910C1F5292E4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
